@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ali Yahya SQA | E-Commerce E2E</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-background"></div>
+
+    <header class="glass-navbar">
+      <a href="#/" class="logo" data-testid="nav-home">aliyhya.</a>
+
+      <!-- Global Search -->
+      <div
+        class="search-container"
+        id="search-wrapper"
+        style="position: relative; z-index: 1100"
+      >
+        <input
+          type="text"
+          id="global-search"
+          placeholder="Search products..."
+          data-testid="search-input"
+          autocomplete="off"
+        />
+        <button
+          id="search-btn"
+          class="icon-btn"
+          data-testid="search-btn"
+          aria-label="Search"
+        >
+          🔍
+        </button>
+        <ul
+          id="search-suggestions"
+          class="search-suggestions"
+          data-testid="search-suggestions"
+        ></ul>
+      </div>
+
+      <nav class="nav-right">
+        <div id="auth-links" class="auth-links">
+          <!-- Auth states injected by JS -->
+        </div>
+        <a href="#/" class="nav-link" data-testid="nav-home-link">Home</a>
+        <a href="#cart" class="nav-cart" data-testid="nav-cart">
+          🛒 Cart
+          <span class="cart-badge" id="cart-count" data-testid="cart-badge"
+            >0</span
+          >
+        </a>
+      </nav>
+    </header>
+
+    <!-- Global Toast Container for Async Action Feedback -->
+    <div
+      id="toast-container"
+      class="toast-container"
+      data-testid="toast-container"
+    ></div>
+
+    <main id="app-container" class="fade-in">
+      <!-- Views injected by app.js router -->
+    </main>
+
+    <!-- Global Loading Spinner -->
+    <div
+      id="global-spinner"
+      class="global-spinner"
+      data-testid="global-spinner"
+      style="display: none"
+    >
+      <div class="spinner-circle"></div>
+    </div>
+
+    <!-- Global Modal Overlay -->
+    <div
+      id="modal-container"
+      class="modal-overlay"
+      data-testid="modal-container"
+      style="display: none"
+    >
+      <div class="modal-content">
+        <h3 id="modal-title" data-testid="modal-title">Confirmation</h3>
+        <p id="modal-body" data-testid="modal-body">Are you sure?</p>
+        <div class="modal-actions">
+          <button
+            class="btn-secondary"
+            id="modal-cancel-btn"
+            data-testid="modal-cancel-btn"
+          >
+            Cancel
+          </button>
+          <button
+            class="btn-primary"
+            id="modal-confirm-btn"
+            data-testid="modal-confirm-btn"
+            style="background: var(--error-color)"
+          >
+            Yes, Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
